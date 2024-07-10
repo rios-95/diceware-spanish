@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <title>Diceware en español</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet" />
+    <style>
+      #copiarIcono {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body class="text-center">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">DW-ES</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a
+              class="nav-link active"
+              href="#"
+              >Home</a
+            >
+            <!-- <a
+              class="nav-link"
+              href=/#"
+              >Features</a
+            >
+            <a
+              class="nav-link"
+              href="#"
+              >Contact</a
+            > -->
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Diceware en español</h1>
+        <div class="dropdown-divider"></div>        <p class="lead">
+          Genera un passphrase con palabras aleatorias de forma
+          <b class="text-bold">criptográficamente segura</b> en puro JavaScript local
+        </p>
+        <form id="dicewareForm" class="row text-left">
+          <div class="col-md-12 mb-3">
+            <label for="cantidadPalabras" class="form-label">Cantidad de palabras:</label>
+            <select id="cantidadPalabras" name="cantidadPalabras" class="form-control form-select">
+              <option value="3">3</option>
+              <option value="4" selected>4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+            </select>
+          </div>
+    
+          <div class="col-md-12 mb-3">
+            <label for="separador" class="form-label">Separador:</label>
+            <select id="separador" name="separador" class="form-control form-select">
+              <option value=".">.</option>
+              <option value="#">#</option>
+              <option value="-">-</option>
+              <option value=":">:</option>
+              <option value="_">_</option>
+              <option value="=">=</option>
+            </select>
+          </div>
+    
+          <div class="col-12 mt-3">
+            <button type="submit" class="btn btn-primary">Generar</button>
+          </div>
+        </form>
+    
+        <div class="row">
+            <div class="col-md-11 mt-5">
+              <p id="dicewareText" class="text-wrap"></p>
+            </div>
+            <div class="col-md-1 mt-5">
+              <i id="copiarIcono" class="fas fa-solid fa-copy"></i>
+            </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+      src="./js/jquery-3.2.1.slim.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="js/generador.js"></script>
+  </body>
+</html>
