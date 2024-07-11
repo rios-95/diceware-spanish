@@ -14,13 +14,6 @@ function tirarDados() {
   return tirada;
 }
 
-/**
- * Dada una tirada de dados recupera la palabra del diccionario
- * @param {string} tirada 
- */
-function getPalabra(tirada) {
-
-}
 
 async function cargarDiccionarioDiceware() {
   const respuesta = await fetch("js/dictionary/dw-es.json");

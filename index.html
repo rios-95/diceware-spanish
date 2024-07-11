@@ -9,6 +9,7 @@
     />
     <meta name="description" content="" />
     <title>Diceware en español</title>
+    <link rel="icon" href="img/favicon.ico">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -20,30 +21,29 @@
       #copiarIcono {
         cursor: pointer;
       }
+      #dicewareText {
+        overflow-wrap: break-word
+      }
     </style>
   </head>
 
   <body class="text-center">
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <div class="container col-xl-5 col-lg-6 col-md-6 d-flex h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-5">
         <div class="inner">
           <h3 class="masthead-brand">DW-ES</h3>
           <nav class="nav nav-masthead justify-content-center">
             <a
               class="nav-link active"
-              href="#"
-              >Home</a
-            >
-            <!-- <a
-              class="nav-link"
-              href=/#"
-              >Features</a
+              href="index.html"
+              >Inicio</a
             >
             <a
               class="nav-link"
-              href="#"
-              >Contact</a
-            > -->
+              target="_blank"
+              href="https://github.com/rios-95/diceware-spanish/blob/main/README.md"
+              >Readme</a
+            >
           </nav>
         </div>
       </header>
@@ -85,15 +85,26 @@
         </form>
     
         <div class="row">
-            <div class="col-md-11 mt-5">
-              <p id="dicewareText" class="text-wrap"></p>
+            <div class="col-md-11 mt-5 text-dark">
+              <div class="card" >
+                <ul class="list-group list-group-flush list-unstyled">
+                  <li id="dicewareText" class="text-wrap pl-2 pr-2">...</li>
+                </ul>
+              </div>
             </div>
             <div class="col-md-1 mt-5">
               <i id="copiarIcono" class="fas fa-solid fa-copy"></i>
             </div>
         </div>
       </main>
-    </div>
+
+      <footer class="mastfoot mt-5">
+        <div class="inner">
+          <p>Basado en <a href="https://en.wikipedia.org/wiki/Diceware" target="_blank">Diceware</a> y <a href="https://www.useapassphrase.com/" target="_blank">use a passphrase</a>. </p>
+          <p>By <a href="https://github.com/rios-95/diceware-spanish/" target="_blank">@rios-95</a></p>
+        </div>
+      </footer>
+    </div>    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
