@@ -21,8 +21,21 @@
       #copiarIcono {
         cursor: pointer;
       }
+      input[type=checkbox] {
+        /* Double-sized Checkboxes */
+        -ms-transform: scale(2); /* IE */
+        -moz-transform: scale(2); /* FF */
+        -webkit-transform: scale(2); /* Safari and Chrome */
+        -o-transform: scale(2); /* Opera */
+        transform: scale(2);
+        padding: 10px;
+        margin-left: auto;
+      }
       #dicewareText {
         overflow-wrap: break-word
+      }
+      .form-check-label{
+        margin-left: 1.8em;
       }
     </style>
   </head>
@@ -78,9 +91,28 @@
               <option value="=">=</option>
             </select>
           </div>
+          <div class="col-md-12 mt-2">
+            <label><i>(Opcional) Para cumplir políticas de contraseñas comunes:</i></label>
+          </div>
+          <div class="col-md-12 mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="checkUsarMayus">
+              <label class="form-check-label" for="checkUsarMayus">
+                Agregar mayúsculas (aleatorias)
+              </label>
+            </div>
+          </div>
+          <div class="col-md-12 mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="checkUsarNumeros">
+              <label class="form-check-label" for="checkUsarNumeros">
+                Agregar números
+              </label>
+            </div>
+          </div>
     
           <div class="col-12 mt-3">
-            <button type="submit" class="btn btn-primary">Generar</button>
+            <button type="submit" class="btn btn-primary btn-block">Generar</button>
           </div>
         </form>
     

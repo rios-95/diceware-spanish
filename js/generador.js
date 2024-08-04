@@ -1,4 +1,3 @@
-
 /**
  * Genera una tirada de 5 dados
  */
@@ -14,13 +13,20 @@ function tirarDados() {
   return tirada;
 }
 
-
 async function cargarDiccionarioDiceware() {
   const respuesta = await fetch("js/dictionary/dw-es.json");
   const datos = await respuesta.json();
   return datos;
 }
-
+function capitalizarPrimerLetra(string) {
+  //Para que no sea un patrón predecible, capitalizo al azar la primera letra
+  //Esto de paso duplica el universo de palabras :D
+  if (tirarDados() % 2 == 0) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  } else {
+    return string;
+  }
+}
 // Funcion principal
 async function generarDiceware() {
   const diccionario = await cargarDiccionarioDiceware();
@@ -28,6 +34,9 @@ async function generarDiceware() {
     document.getElementById("cantidadPalabras").value
   );
   const separador = document.getElementById("separador").value;
+  const checkUsarMayus = document.getElementById("checkUsarMayus");
+  const checkUsarNumeros = document.getElementById("checkUsarNumeros");
+
   let resultado = [];
   const buffer = new Uint32Array(1);
 
@@ -36,11 +45,17 @@ async function generarDiceware() {
     let tirada = tirarDados();
     if (diccionario.hasOwnProperty(tirada)) {
       var palabra = diccionario[tirada].palabra;
-      console.log("palabra", palabra);
+      if (checkUsarMayus.checked === true) {
+        palabra = capitalizarPrimerLetra(palabra);
+      }
+      console.log("Palabra:", palabra);
     } else {
       console.log("Código Diceware no encontrado");
     }
     resultado.push(palabra);
+  }
+  if (checkUsarNumeros.checked === true) {
+    resultado.push(tirarDados());
   }
 
   resultado = resultado.join(separador);
@@ -53,7 +68,6 @@ document
     event.preventDefault();
     generarDiceware();
   });
-
 
 const copiarIcono = document.getElementById("copiarIcono");
 
